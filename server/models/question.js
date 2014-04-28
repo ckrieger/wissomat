@@ -6,10 +6,8 @@ var mongoose = require('mongoose'),
    * Question Schema
    */
 var QuestionSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
+    id:  Number,
+        
     question: String,
     answer: String,
     wrongOne: String,
@@ -19,6 +17,15 @@ var QuestionSchema = new Schema({
     topic: String
 
 });
+
+/**
+ * Statics
+ */
+QuestionSchema.statics.load = function(id, cb) {
+    this.findOne({
+        _id: id
+    });
+};
 
 
 

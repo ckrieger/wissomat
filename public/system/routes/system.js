@@ -19,10 +19,7 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
                     templateUrl: 'public/system/views/introduction.html'
                 })
 
-                 .state('question', {
-                    url:'/question',
-                    templateUrl: 'public/system/views/question.html'
-                 });
+                 
         }
     ])
     .config(['$locationProvider',

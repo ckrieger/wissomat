@@ -7,12 +7,15 @@ angular.module('mean.questions').config(['$stateProvider', '$urlRouterProvider',
 
             // states for my app
             $stateProvider  
-                           
-                .
-
-                 .state('question', {
+                   
+                   .state('question', {
                     url:'/questions',
-                    templateUrl: 'public/system/views/question.html'
+                    templateUrl: 'public/questions/views/list.html'
+                 })
+
+                   .state('answer', {
+                    url:'/questions/:questionId',
+                    templateUrl: 'public/questions/views/answer.html'
                  });
         }
     ])

@@ -8,6 +8,7 @@ exports.render = function(req, res) {
 
     // Preparing angular modules list with dependencies
     for (var name in mean.modules) {
+       
         modules.push({
             name: name,
             module: 'mean.' + name,

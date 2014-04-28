@@ -34,14 +34,15 @@ angular.module('mean.controllers.login', [])
                 password: $scope.user.password,
                 confirmPassword: $scope.user.confirmPassword,
                 username: $scope.user.username,
-                name: $scope.user.name
+                name: $scope.user.fullname
             })
                 .success(function(){
                     // authentication OK
                     $scope.registerError = 0;
-                    $rootScope.user = $scope.user;
+                    $rootScope.user = $scope.user.fullname;
                     $rootScope.$emit('loggedin');
                     $location.url('/');
+
                 })
                 .error(function(error){
                     // Error: authentication failed
@@ -51,6 +52,8 @@ angular.module('mean.controllers.login', [])
                     else {
                         $scope.registerError = error;
                     }
+
+
                 });
         };
     }]);

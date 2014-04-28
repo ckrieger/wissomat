@@ -1,0 +1,17 @@
+<section data-ng-controller="QuestionController" data-ng-init="find()" >
+	<ul class="jumbotron">
+		
+		
+		<span data-ng-repeat="question in questions">
+
+			<h2>{{question.question}}</h2>
+			
+			<li><a href="#!/questions/{{question._id}}">{{question.answer}}</a></li>
+			<li><a href="/#!/questions/answer">{{question.wrongOne}}</a></li>
+            <li><a href="/#!/questions/answer">{{question.wrongTwo}}</a></li>
+            <li><a href="/#!/questions/answer">{{question.wrongThree}}</a></li>
+		
+		</span>
+	</ul>
+	<h1 data-ng-hide="!questions || questions.length">No questions yet. <br> Why don't you <a href="/#!/articles/create">Create Question</a>?</h1>
+</section>

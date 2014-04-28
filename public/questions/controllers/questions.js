@@ -1,11 +1,13 @@
-angular.module('mean.questions').controller('QuestionController', ['$scope', '$stateParams', '$location', 'Global', 'Questions', function ($scope, $stateParams, $location, Global, Questions) {
-    $scope.global = Global;
+'use strict';
 
+angular.module('mean.questions').controller('QuestionController', ['$scope', '$stateParams', '$location', 'Global', 'Questions', function ($scope, $stateParams, $location, Global, Questions) {
+    
+   
     
 
     $scope.find = function() {
-        .query(function(questions) {
-            $scope.questions = questions;
+        Questions.query(function(questions) {
+            $scope.questions = questions ;
 
         });
     };
